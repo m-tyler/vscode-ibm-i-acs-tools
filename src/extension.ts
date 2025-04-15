@@ -18,7 +18,10 @@ export function activate(context: vscode.ExtensionContext) {
 		host = await pickHost(host, 'SQL scripts');
 
 		let cmd = (acsbinary.endsWith('.jar') ? `java -jar ${acsbinary}` : `${acsbinary}`);
-		cmd += ` /plugin=rss /autorun=0  /file="${p1.path ? p1.path : ``}"`;
+		cmd += ` /plugin=rss /autorun=0 `;
+		if (p1) {
+			cmd += ` /file="${p1.path ? p1.path : ``}"`;
+		}
 
 		if (host > '') {
 			cmd += ` /system=${host} `
@@ -44,7 +47,6 @@ export function activate(context: vscode.ExtensionContext) {
 		let host: string = config.get('host') || ''
 		let acsbinary: string = config.get('acsbinary') || ''
 		let user: string = config.get('user') || ''
-		let database: string = config.get('database') || ''
 
 		if (acsbinary <= '') {
 			vscode.window.showInformationMessage('You need to configure the ACS executable "IBM i ACS Tools" ')
@@ -60,9 +62,6 @@ export function activate(context: vscode.ExtensionContext) {
 		}
 		if (user > '') {
 			cmd += ` /user=${user} `
-		}
-		if (database > '') {
-			cmd += ` /database=${database}  `
 		}
 
 		const rc = cp.exec(cmd, (err: any, stdout: string, stderr: string) => {

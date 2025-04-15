@@ -1,8 +1,8 @@
 {
 	"name": "ibm-i-acs-tools",
-	"displayName": "IBM i ACS",
+	"displayName": "IBM i ACS Tools",
 	"description": "Connect to IBM i ACS tools",
-	"version": "0.0.5",
+	"version": "0.0.6",
 	"author": {
 		"name": "Matt Tyler",
 		"url": "https://github.com/m-tyler/"
@@ -130,14 +130,6 @@
 				{
 					"when": "resourceLangId == sql",
 					"command": "acstools.ibmiRunSqlFromAcs",
-					"group": "navigation"
-				},
-				{
-					"command": "acstools.ibmiRunDebuggerInAcs",
-					"group": "navigation"
-				},
-				{
-					"command": "acstools.ibmiRunDb2toolsInAcs",
 					"group": "navigation"
 				}
 			]
