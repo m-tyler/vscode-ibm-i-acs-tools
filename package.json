@@ -9,8 +9,17 @@
 	},
 	"publisher": "m-tyler",
 	"readme": "README.md",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/m-tyler/vscode-ibm-i-acs-tools"
+	},
+	"homepage": "https://github.com/m-tyler/vscode-ibm-i-acs-tools/blob/master/README.md",
+
+	"bugs": {
+		"url": "https://github.com/m-tyler/vscode-ibm-i-acs-tools/issues"
+	},
 	"engines": {
-		"vscode": "^1.34.0"
+		"vscode": "^1.71.0"
 	},
 	"keywords": [
 		"SQL",
@@ -136,6 +145,7 @@
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
+		"package": "vsce package",
 		"compile": "tsc -p ./",
 		"lint": "tslint -p ./",
 		"watch": "tsc -watch -p ./"
