@@ -38,7 +38,7 @@
 	"activationEvents": [
 		"onStartupFinished"
 	],
-	"main": "./out/extension.js",
+	"main": "./dist/extension.js",
 	"contributes": {
 		"configuration": {
 			"title": "IBM i ACS tools",
