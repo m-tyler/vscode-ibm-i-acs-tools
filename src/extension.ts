@@ -11,7 +11,7 @@ export function activate(context: vscode.ExtensionContext) {
 		const acsbinary: string = config.get('acsbinary') || ''
 
 		if (acsbinary <= '') {
-			vscode.window.showInformationMessage('You need to configure the ACS executable "IBM i ACS Tools" ')
+			vscode.window.showErrorMessage('You need to configure the ACS executable "IBM i ACS Tools" ')
 			return
 		}
 
@@ -49,7 +49,7 @@ export function activate(context: vscode.ExtensionContext) {
 		let user: string = config.get('user') || ''
 
 		if (acsbinary <= '') {
-			vscode.window.showInformationMessage('You need to configure the ACS executable "IBM i ACS Tools" ')
+			vscode.window.showErrorMessage('You need to configure the ACS executable "IBM i ACS Tools" ')
 			return
 		}
 		host = await pickHost(host, 'the System Debugger');
@@ -83,7 +83,7 @@ export function activate(context: vscode.ExtensionContext) {
 		let schema: string = config.get('schema') || ''
 
 		if (acsbinary <= '') {
-			vscode.window.showInformationMessage('You need to configure the ACS executable "IBM i ACS Tools" ')
+			vscode.window.showErrorMessage('You need to configure the ACS executable "IBM i ACS Tools" ')
 			return
 		}
 
@@ -124,11 +124,11 @@ export function activate(context: vscode.ExtensionContext) {
 		
 		// apply these values to new style IDS
 		config.update('ibm-i-acs.host', host);
-		console.log(`ibm-i-acs.host:`, host);
+		// console.log(`ibm-i-acs.host:`, host);
 		config.update('ibm-i-acs.acsbinary', acsjar);
-		console.log(`ibm-i-acs.acsbinary:`, acsjar);
+		// console.log(`ibm-i-acs.acsbinary:`, acsjar);
 		config.update('ibm-i-acs.schema', schema);
-		console.log(`ibm-i-acs.schema:`, schema);
+		// console.log(`ibm-i-acs.schema:`, schema);
 		
 		//rmeove old IDs from config - NOPE incase someone runs this acstools and the original version
 		// config.update('ibm-i-run-sql-from-acs.host', `undefined`, true);
