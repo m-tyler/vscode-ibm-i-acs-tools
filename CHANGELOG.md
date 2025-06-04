@@ -1,3 +1,5 @@
+## Version 0.0.7
+  * File being opened is from a UNC path, server name was being dropped.  File open error occurred.  
 ## Version 0.0.6
   * Bug introduced creating initial project. 
 ## Version 0.0.5

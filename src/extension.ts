@@ -20,7 +20,7 @@ export function activate(context: vscode.ExtensionContext) {
 		let cmd = (acsbinary.endsWith('.jar') ? `java -jar ${acsbinary}` : `${acsbinary}`);
 		cmd += ` /plugin=rss /autorun=0 `;
 		if (p1) {
-			cmd += ` /file="${p1.path ? p1.path : ``}"`;
+			cmd += ` /file="${p1._fsPath ? p1._fsPath : ``}"`;
 		}
 
 		if (host > '') {
