@@ -30,7 +30,7 @@ export function activate(context: vscode.ExtensionContext) {
 		if (database > '') {
 			cmd += ` /database=${database}  `
 		}
-
+		vscode.window.showInformationMessage(cmd);
 		const rc = cp.exec(cmd, (err: any, stdout: string, stderr: string) => {
 			console.log('stdout: ' + stdout);
 			console.log('stderr: ' + stderr);
