@@ -2,7 +2,7 @@
 	"name": "ibm-i-acs-tools",
 	"displayName": "IBM i ACS Tools",
 	"description": "Connect to IBM i ACS tools",
-	"version": "0.0.7",
+	"version": "0.0.8",
 	"author": {
 		"name": "Matt Tyler",
 		"url": "https://github.com/m-tyler/"
@@ -136,11 +136,11 @@
 		}
 	},
 	"scripts": {
-		"vscode:prepublish": "npm run compile",
-		"package": "vsce package",
-		"compile": "tsc -p ./",
-		"lint": "tslint -p ./",
-		"watch": "tsc -watch -p ./"
+		"vscode:prepublish": "npm.cmd run compile",
+		"package": "vsce.cmd package",
+		"compile": "tsc.cmd -p ./",
+		"lint": "tslint.cmd -p ./",
+		"watch": "tsc.cmd -watch -p ./"
 	},
 	"devDependencies": {
 		"@types/node": "^16.x",

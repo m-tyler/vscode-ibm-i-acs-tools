@@ -113,27 +113,7 @@ export function activate(context: vscode.ExtensionContext) {
 	});
 	context.subscriptions.push(disposable);
 	disposable = vscode.commands.registerCommand('acstools.initAcsTools', async (p2) => {
-		// Get from config old style IDS
-		var configold = vscode.workspace.getConfiguration("ibm-i-run-sql-from-acs")
-		let host: string = configold.get('host') || ''
-		let acsjar: string = configold.get('acsjar') || ''
-		let schema: string = configold.get('schema') || ''
 		
-		// New the ACS plugin config
-		const config = vscode.workspace.getConfiguration("ibm-i-acs")
-		
-		// apply these values to new style IDS
-		config.update('ibm-i-acs.host', host);
-		// console.log(`ibm-i-acs.host:`, host);
-		config.update('ibm-i-acs.acsbinary', acsjar);
-		// console.log(`ibm-i-acs.acsbinary:`, acsjar);
-		config.update('ibm-i-acs.schema', schema);
-		// console.log(`ibm-i-acs.schema:`, schema);
-		
-		//rmeove old IDs from config - NOPE incase someone runs this acstools and the original version
-		// config.update('ibm-i-run-sql-from-acs.host', `undefined`, true);
-		// config.update('ibm-i-run-sql-from-acs.acsjar', `undefined`, true);
-		// config.update('ibm-i-run-sql-from-acs.schema', `undefined`, true);
 	});
 	context.subscriptions.push(disposable);
 	vscode.commands.executeCommand('acstools.initAcsTools')
