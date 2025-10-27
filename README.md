@@ -48,3 +48,5 @@ This tool allows you to start the Performance Center.  If you are on later versi
 
 #### Notes
 1. When selecting to run an ACS plugin, these run as a connected thread to the VS Code process. 
+
+# Images

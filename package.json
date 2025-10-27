@@ -14,7 +14,6 @@
 		"url": "https://github.com/m-tyler/vscode-ibm-i-acs-tools"
 	},
 	"homepage": "https://github.com/m-tyler/vscode-ibm-i-acs-tools/blob/master/README.md",
-
 	"bugs": {
 		"url": "https://github.com/m-tyler/vscode-ibm-i-acs-tools/issues"
 	},
@@ -95,8 +94,7 @@
 			}
 		],
 		"menus": {
-			"commandPalette": [
-			],
+			"commandPalette": [],
 			"explorer/context": [
 				{
 					"when": "resourceLangId == sql",
@@ -146,6 +144,7 @@
 		"@types/node": "^16.x",
 		"@types/vscode": "^1.71.0",
 		"tslint": "^5.16.0",
-		"typescript": "^4.8.2"
+		"typescript": "^4.8.2",
+		"yazl": "^3.3.1"
 	}
 }
